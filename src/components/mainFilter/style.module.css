@@ -1,0 +1,7 @@
+.flex{
+    display: flex;
+    padding-left: 10px;
+}
+.flex li:not(:last-child){
+    margin-right: 30px;
+}

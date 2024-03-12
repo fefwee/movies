@@ -1,0 +1,18 @@
+.container{
+  width: 100%;
+  height: 300px;
+  border:1px solid red;
+  overflow-y: scroll;
+  overflow: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
+.container::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+.containerList li{
+  height: 100px;
+}

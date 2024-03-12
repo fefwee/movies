@@ -1,0 +1,80 @@
+.container {
+    z-index: 10000;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.detailBox {
+    overflow: hidden;
+    max-width: 200px;
+}
+
+.detailImg img {
+    border-radius: 26px;
+    max-width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+}
+
+.btnMore {
+    display: inline-block;
+    background-color: #a1cceb;
+    color: #333;
+    font-size: 16px;
+    width: 100%;
+    padding: 10px 0;
+    border-radius: 10px;
+    text-decoration: none;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s;
+}
+
+.btnMore:hover {
+    box-shadow: 0 4px 8px rgba(137, 134, 134, 0.2);
+}
+
+.descriptionBox {
+    position: absolute;
+    min-width: 500px;
+    min-height: 300px auto;
+    right: 100%;
+    background-color: #f2f8fd;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 26px;
+    font-size: 17px;
+    transition: 1s;
+}
+
+
+.descriptionBox ul {
+    padding:20px 0 20px 20px;
+}
+
+.flex {
+    display: flex;
+    padding: 8px 0;
+}
+
+.descriptionBox ul li p{
+    padding: 0 20px 0 0;
+    color: rgb(192, 132, 132);
+    flex-grow: 1;
+}
+.descriptionBox ul li span {
+    padding: 0 10px 0 0;
+}
+
+.textDesc {
+    /* Скрываем содержимое, выходящее за пределы контейнера */
+    display: -webkit-box;
+    /* Отображаем содержимое в виде блока */
+    -webkit-line-clamp: 1;
+    /* Ограничиваем количество строк, которые будут отображаться */
+    -webkit-box-orient: vertical;
+    /* Отображаем текст по вертикали */
+    text-overflow: ellipsis;
+}
+

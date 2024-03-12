@@ -1,25 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import './index.css'
+import Header from './pages/header/Header';
+import Main from './pages/main/Main';
+import LeftMenu from './pages/leftMenu/LeftMenu';
+import RightPanel from './pages/rightPanel/RightPanel';
+import Footer from './pages/footer/Footer';
+import Context from './context/Context';
+
 
 function App() {
+
+  const [idBook, setIdBook] = useState(5283168);
+
+  const value = {
+    idBook,
+    setIdBook
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Context.Provider value={value}>
+      <div className='container'>
+        <header>
+          <Header />
+        </header>
+        <main>
+          <Main />
+        </main>
+        <aside>
+          <LeftMenu />
+        </aside>
+        <aside className='right-panel'>
+          <RightPanel />
+        </aside>
+        <footer>
+          <Footer />
+        </footer>
+      </div>
+    </Context.Provider>
   );
 }
 

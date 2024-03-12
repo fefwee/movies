@@ -1,0 +1,28 @@
+.container {
+    width: 1000px;
+    overflow: hidden;
+}
+.subContainer{
+}
+.cardList {
+    position: relative;
+    transition: 2s all ease;
+    display: flex;
+    justify-content:flex-start;
+    max-height: 400px;
+   
+}
+
+
+.card {
+    position: relative;
+    max-height: 310px auto;
+    margin: 0 10px;
+    text-align: left;
+}
+
+.backgroundImg img {
+    height: 250px;
+    object-fit: contain;
+    border-radius: 26px;
+}

@@ -1,0 +1,17 @@
+.flexList {
+    padding-top: 20px;
+    display: flex;
+}
+.flexList li {
+    margin:0 10px;
+}
+.posterImg{
+    max-width: 100px;
+    max-height: 100px;
+}
+.posterImg img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 26px;
+}

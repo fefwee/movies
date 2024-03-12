@@ -1,0 +1,15 @@
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+}
+.flex li {
+    padding: 10px 20px;
+}
+
+.logo {
+    min-width: 53px;
+    min-height: 53px;
+    border-radius: 50%;
+    border: 1px solid red;
+}

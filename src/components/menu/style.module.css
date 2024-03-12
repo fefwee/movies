@@ -1,0 +1,74 @@
+.flex {
+    margin: 30px 0 0 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.notesLi {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 26px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #18333E;
+
+}
+
+.warpper {
+    position: absolute;
+    left: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 80px;
+    height: 50px;
+    background-color: #F9D44A;
+    border-radius: 0px 31.5px 31.5px 0px;
+    transition: .3s all ease;
+}
+
+.warpperNone {
+    z-index: 0;
+    position: absolute;
+    left: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width:0px;
+    height: 50px;
+    background-color: #F9D44A;
+    border-radius: 0px 31.5px 31.5px 0px;
+    transition: .3s all ease;
+}
+
+.notesLi li {
+    display: flex;
+    align-items: center;
+}
+.notesLi li  span {
+    position: relative;
+}
+
+.active {
+    position: relative;
+    left: 15px;
+}
+
+.notesLi li span img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-50%,-50%);
+    z-index: 100000;
+    min-width: 19px;
+    min-height: 19px;
+    padding: 0 10px 0 0;
+}
+
+.notesLi li:not(:last-child) {
+    margin-bottom: 35px;
+}
+
+.logOut {
+    margin-top: 40px;
+}

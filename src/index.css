@@ -1,13 +1,65 @@
-body {
+* {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  font-family: "Baloo 2", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color:inherit;
+}
+
+body {
+  background-color: #f2f8fd;
+  overflow-y: hidden;
+}
+
+
+.container {
+
+  max-width: 100%;
+  margin: 0 auto;
+  min-height: 95%;
+  position: relative;
+  display: grid;
+  grid-template-areas:
+    "leftMenu header rightPanel"
+    "leftMenu  main rightPanel"
+    "leftMenu  main rightPanel"
+    "leftMenu  footer rightPanel";
+  ;
+  grid-template-columns: .5fr 2fr .6fr;
+
+}
+
+aside {
+  grid-area: leftMenu;
+  min-height: 100vh;
+}
+
+header {
+  position: relative;
+  max-height:50px;
+  grid-area: header;
+}
+
+main {
+  position: relative;
+  max-height: 400px;
+  grid-area: main;
+}
+
+.right-panel {
+  grid-area: rightPanel;
+}
+
+footer {
+  position: relative;
+  max-height: 200px;
+  grid-area: footer;
 }

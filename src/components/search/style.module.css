@@ -1,0 +1,57 @@
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.wrapperSearch{
+    padding: 15px;
+    display: flex;
+}
+
+input {
+    border: none;
+    min-width: 580px;
+    outline: none;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #E9F1FA;
+    color: #18333E;
+    padding-left: 50px;
+    border-radius: 26px;
+}
+
+.flex {
+    position: relative;
+    display: flex;
+}
+
+.icon img {
+    position: absolute;
+    max-width: 24px;
+    max-height: 24px;
+    top: 0;
+    left: 0;
+    transform: translate(50%, 50%);
+}
+
+.setting {
+    position: relative;
+    max-width: 53px;
+    height: 53px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 50px;
+}
+.circleIcon{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.settingIcon{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
