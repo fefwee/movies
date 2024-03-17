@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import MainFilter from '../../components/mainFilter/MainFilter'
 import CardMainPage from '../../components/cardMainPage/CardMainPage'
+import RightPanel from '../rightPanel/RightPanel'
+import Footer from '../footer/Footer'
+import style from './style.module.css'
 
 const Main = () => {
 
@@ -20,9 +23,21 @@ const Main = () => {
 
   return (
     <div>
-      <h1 style={{ fontSize: '30px' }}>Премьеры 2024</h1>
-      <MainFilter />
-      <CardMainPage movie={movie} />
+      {/* <h1 style={{ fontSize: '30px' }}>Премьеры 2024</h1> */}
+      <div className={style.containerMain}>
+        <div className={style.mainFilter}>
+          <MainFilter />
+        </div>
+        <div className={style.cardMainPage}>
+          <CardMainPage movie={movie} />
+        </div>
+        <div className={style.rightPanel}>
+          <RightPanel />
+        </div>
+        <div className={style.footer}>
+          <Footer />
+        </div>
+      </div>
     </div>
   )
 }

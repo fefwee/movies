@@ -27,9 +27,6 @@ const RightPanel = () => {
   return (
     <div>
       <div>
-        <Profile />
-      </div>
-      <div>
         <DetailMovie detailMovie={detailMovie} />
       </div>
       <div>

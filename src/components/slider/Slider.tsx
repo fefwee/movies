@@ -7,19 +7,54 @@ const Slider = () => {
   return (
     <div className={style.container}>
       <ul className={style.containerList}>
-        <li><div>123</div></li>
-        <li>2323</li>
-        <li>2323</li>
-        <li>2323</li>
-        <li>2323</li>
-        <li>2323</li>
-        <li>2323</li>
-        <li>2323</li>
-        <li>2323</li>
-        <li>2323</li>
-        <li>2323</li>
-        <li>2323</li>
-        <li>2323</li>
+        <li className={style.flex}>
+          <div>image</div>
+          <div className={style.flex}>
+           <p>Name</p>
+           <p>Year</p>
+          </div>
+          <div>heart</div>
+        </li>
+        <li className={style.flex}>
+          <div>image</div>
+          <div className={style.flex}>
+           <p>Name</p>
+           <p>Year</p>
+          </div>
+          <div>heart</div>
+        </li>
+        <li className={style.flex}>
+          <div>image</div>
+          <div className={style.flex}>
+           <p>Name</p>
+           <p>Year</p>
+          </div>
+          <div>heart</div>
+        </li>
+        <li className={style.flex}>
+          <div>image</div>
+          <div className={style.flex}>
+           <p>Name</p>
+           <p>Year</p>
+          </div>
+          <div>heart</div>
+        </li>
+        <li className={style.flex}>
+          <div>image</div>
+          <div className={style.flex}>
+           <p>Name</p>
+           <p>Year</p>
+          </div>
+          <div>heart</div>
+        </li>
+        <li className={style.flex}>
+          <div>image</div>
+          <div className={style.flex}>
+           <p>Name</p>
+           <p>Year</p>
+          </div>
+          <div>heart</div>
+        </li>
       </ul>
     </div>
   )

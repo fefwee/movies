@@ -1,6 +1,7 @@
 import React, { FC, useEffect, useContext } from 'react';
 import style from './style.module.css';
 import Context from '../../context/Context';
+import { Link } from 'react-router-dom';
 const CardMainPage = ({ movie }: any) => {
 
 
@@ -8,6 +9,7 @@ const CardMainPage = ({ movie }: any) => {
   const value = useContext(Context);
 
   const handleGetIdBook = (id: any) => {
+    
     value.setIdBook(id);
   }
 
@@ -24,11 +26,13 @@ const CardMainPage = ({ movie }: any) => {
           {
             newArrMovie.map((item: any) => {
               return (
-                <ul className={style.card} key={item.kinopoiskId} onClick={() => handleGetIdBook(item.kinopoiskId)} >
+                <Link to={`/${item.kinopoiskId}`} key={item.kinopoiskId}>
+                <ul className={style.card}  onClick={() => handleGetIdBook(item.kinopoiskId)} >
                   <li className={style.backgroundImg}><img src={item.posterUrl} /></li>
                   <li >{item.nameRu}</li>
                   <li>{item.year}</li>
                 </ul>
+                </Link>
               )
             })
           }

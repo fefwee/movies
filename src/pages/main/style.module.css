@@ -1,0 +1,22 @@
+.containerMain {
+  min-height:90vh;
+  display: flex;
+}
+
+.mainFilter {
+  grid-area: mainFilter;
+}
+
+.cardMainPage {
+  grid-area: cardMainPage;
+}
+
+.rightPanel {
+  max-height: 400px;
+  grid-area: rightPanel;
+}
+
+.footer {
+  max-height: 400px;
+  grid-area: footer;
+}

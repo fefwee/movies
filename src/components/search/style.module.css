@@ -2,6 +2,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    border:1px solid blue;
 }
 .wrapperSearch{
     padding: 15px;

@@ -9,6 +9,7 @@ import graph from '../../assets/menu/graph.png';
 import mess from '../../assets/menu/mess.png';
 import ssetings from '../../assets/menu/setting-2.png';
 import logOut from '../../assets/menu/logout.png';
+import { Link } from 'react-router-dom';
 
 
 
@@ -29,10 +30,10 @@ const Menu: FC = () => {
 
 
     const menu: any[] = [
-        { id: 1, title: 'Dashboard', img: home },
-        { id: 2, title: 'Note’s', img: note },
-        { id: 3, title: 'Theme', img: theme },
-        { id: 4, title: 'Account', img: account },
+        { id: 1, title: 'Home', img: home,link:'/' },
+        { id: 2, title: 'Favorite', img: note,link:'/favorite' },
+        { id: 3, title: 'History', img: theme,link:'/history' },
+        { id: 4, title: 'Account', img: account,link:'/profile' },
         { id: 5, title: 'Explore', img: explore },
         { id: 6, title: 'Graph', img: graph },
         { id: 7, title: 'Messages', img: mess },
@@ -56,7 +57,11 @@ const Menu: FC = () => {
                                     key={item.id}
                                 ><div className={boxClassName && id === item.id ? style.warpper : style.warpperNone}></div>
                                     <span ><img src={item.img} alt="" /></span>
-                                    <a  href="#" className={boxClassName && id === item.id ? style.active : ''}>{item.title}</a>
+                                    <Link to={item.link}
+                                     className={boxClassName && id === item.id ? style.active : ''}
+                                     >
+                                        {item.title}
+                                        </Link>
                                 </li>
                             )
                         })

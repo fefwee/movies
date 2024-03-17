@@ -16,50 +16,39 @@ a {
 
 body {
   background-color: #f2f8fd;
-  overflow-y: hidden;
 }
 
 
-.container {
+  .container {
+    min-height: 95%;
+    display: grid;
+    grid-template-areas:
+      "leftMenu header "
+      "leftMenu  main "
+      "leftMenu  main "
+      "leftMenu  main ";
+    ;
+    grid-template-columns: 250px 1fr;
+  }
 
-  max-width: 100%;
-  margin: 0 auto;
-  min-height: 95%;
-  position: relative;
-  display: grid;
-  grid-template-areas:
-    "leftMenu header rightPanel"
-    "leftMenu  main rightPanel"
-    "leftMenu  main rightPanel"
-    "leftMenu  footer rightPanel";
-  ;
-  grid-template-columns: .5fr 2fr .6fr;
+  aside {
+    grid-area: leftMenu;
+    min-height:100vh;
+    border:1px solid red;
+  }
 
-}
+  header {
+    position: relative; 
+    max-height:100%;
+    grid-area: header;
+    border:1px solid green;
+  }
 
-aside {
-  grid-area: leftMenu;
-  min-height: 100vh;
-}
+  main {
+    max-width: 100%;
+    position: relative;
+    min-height:90vh;
+    grid-area: main;
+    border:1px solid red;
+  }
 
-header {
-  position: relative;
-  max-height:50px;
-  grid-area: header;
-}
-
-main {
-  position: relative;
-  max-height: 400px;
-  grid-area: main;
-}
-
-.right-panel {
-  grid-area: rightPanel;
-}
-
-footer {
-  position: relative;
-  max-height: 200px;
-  grid-area: footer;
-}
