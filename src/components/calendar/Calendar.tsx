@@ -5,7 +5,7 @@ import moment from "moment";
 
 const Calendar = ({topMovie}:any) => {
 
-    const newTopMoveArr = topMovie.slice(0,8)
+    const newTopMoveArr = topMovie.slice(0,10)
     return (
         <div>
             <div>

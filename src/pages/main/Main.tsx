@@ -4,18 +4,15 @@ import CardMainPage from '../../components/cardMainPage/CardMainPage'
 import RightPanel from '../rightPanel/RightPanel'
 import Footer from '../footer/Footer'
 import style from './style.module.css'
+import { getRequest } from '../../core/requestApi'
 
 const Main = () => {
+  const api: string | undefined = process.env.REACT_APP_lIST_MOVIE_PREMIERE;
 
   const [movie, setMovie] = useState([])
 
   useEffect(() => {
-    const options = {
-      method: 'GET',
-      headers: { accept: 'application/json', 'X-API-KEY': '1380760f-a029-4ff0-92d9-e34c16bc381b' }
-    };
-
-    fetch('https://kinopoiskapiunofficial.tech/api/v2.2/films/premieres?year=2024&month=FEBRUARY', options)
+    getRequest(api)
       .then(response => response.json())
       .then(response => setMovie(response.items))
       .catch(err => console.error(err));

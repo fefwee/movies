@@ -5,6 +5,10 @@
   font-family: "Baloo 2", sans-serif;
 }
 
+img{
+  max-width: 100%;
+  height: auto;
+}
 li {
   list-style: none;
 }
@@ -16,6 +20,7 @@ a {
 
 body {
   background-color: #f2f8fd;
+  overflow: hidden;
 }
 
 
@@ -34,14 +39,12 @@ body {
   aside {
     grid-area: leftMenu;
     min-height:100vh;
-    border:1px solid red;
   }
 
   header {
     position: relative; 
     max-height:100%;
     grid-area: header;
-    border:1px solid green;
   }
 
   main {
@@ -49,6 +52,5 @@ body {
     position: relative;
     min-height:90vh;
     grid-area: main;
-    border:1px solid red;
   }
 

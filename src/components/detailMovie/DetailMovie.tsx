@@ -29,7 +29,7 @@ const DetailMovie = ({ detailMovie }: any) => {
                 </li>
             </ul>
             <div className={style.wrapperBox}>
-            <div /* style={active ? {top:'0'}:{top:'-200%'}} */ className={style.descriptionBox}>
+            <div  style={active ? {top:'0px'}:{top:'-300%'}} className={style.descriptionBox}>
                 <ul>
                     <li className={style.flex}><p>Название</p><span>{detailMovie.nameRu || detailMovie.nameEn || detailMovie.nameOriginal}</span></li>
                     <li className={style.flex}>

@@ -1,20 +1,25 @@
 .containerMain {
-  min-height:90vh;
-  display: flex;
+  min-height: 90vh;
+  display: grid;
+  grid-template-areas:
+    "mainFilter mainFilter "
+    "cardMainPage  cardMainPage "
+    "cardMainPage  cardMainPage "
+    "footer  footer "
+  ;
 }
 
 .mainFilter {
   grid-area: mainFilter;
+
 }
 
 .cardMainPage {
   grid-area: cardMainPage;
+  padding: 0 30px 0 0 ;
 }
 
-.rightPanel {
-  max-height: 400px;
-  grid-area: rightPanel;
-}
+
 
 .footer {
   max-height: 400px;

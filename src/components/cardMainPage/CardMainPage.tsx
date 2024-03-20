@@ -1,44 +1,59 @@
-import React, { FC, useEffect, useContext } from 'react';
+import React, { FC, useEffect, useContext, useState } from 'react';
 import style from './style.module.css';
-import Context from '../../context/Context';
+import noFavorite from '../../assets/cardMovie/niactive.svg'
+import favorite from '../../assets/cardMovie/active.svg'
 import { Link } from 'react-router-dom';
+
+
 const CardMainPage = ({ movie }: any) => {
 
 
+  const newArrMovie = movie.slice(0, 6);
+  const active = false;
+  const [isFavoriteArr, setIsFavoriteArr] = useState<any>([]);
 
-  const value = useContext(Context);
-
-  const handleGetIdBook = (id: any) => {
-    
-    value.setIdBook(id);
+    const handleChangeFavorite = (id: any) => {
+    setIsFavoriteArr((prev:any)=> [...prev,id]);
   }
 
-  const newArrMovie = movie.slice(0, 10);
   useEffect(() => {
-
-  }, []);
-
+    
+  }, [isFavoriteArr]);
 
   return (
-    <div className={style.container}>
-      <div className={style.subContainer} >
-        <div className={style.cardList} >
-          {
-            newArrMovie.map((item: any) => {
-              return (
-                <Link to={`/${item.kinopoiskId}`} key={item.kinopoiskId}>
-                <ul className={style.card}  onClick={() => handleGetIdBook(item.kinopoiskId)} >
-                  <li className={style.backgroundImg}><img src={item.posterUrl} /></li>
-                  <li >{item.nameRu}</li>
-                  <li>{item.year}</li>
-                </ul>
+    <div className={style.newContainer} >
+      <div className={style.cardList} >
+        {
+          newArrMovie.map((item: any) => {
+            return (
+
+              <div className={style.card} key={item.kinopoiskId}>
+                <div className={active ? style.active : style.niactive}
+                  onClick={() => handleChangeFavorite(item.kinopoiskId)}
+                ></div>
+                <Link to={`/${item.kinopoiskId}`} >
+                  <div className={style.cardImage}
+                  >
+                    <img src={item.posterUrl} />
+                  </div>
+                  <div>
+                    <ul>
+                      <li style={{ fontSize: "14px" }}
+                      >{item.nameRu}</li>
+                      <li>{item.year}</li>
+                    </ul>
+                  </div>
                 </Link>
-              )
-            })
-          }
-        </div>
+              </div>
+
+
+
+            )
+          })
+        }
       </div>
     </div>
+
   )
 }
 

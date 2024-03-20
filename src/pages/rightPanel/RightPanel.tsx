@@ -10,7 +10,7 @@ const RightPanel = () => {
 
   const [detailMovie, setDetailMovie] = useState([]);
 
-  useEffect(() => {
+/*   useEffect(() => {
     const options = {
       method: 'GET',
       headers: { accept: 'application/json', 'X-API-KEY': '1380760f-a029-4ff0-92d9-e34c16bc381b' }
@@ -20,18 +20,26 @@ const RightPanel = () => {
       .then(response => response.json())
       .then(response => setDetailMovie(response))
       .catch(err => console.error(err));
-  }, [value.idBook])
-  
-  console.log(detailMovie)
+  }, [value.idBook]) */
+
 
   return (
     <div>
-      <div>
+    {/*   <div>
         <DetailMovie detailMovie={detailMovie} />
       </div>
       <div>
         <FavoriteMovie detailMovie={detailMovie}/>
       </div>
+      <ul>
+        <li>lorem</li>
+        <li>lorem</li>
+        <li>lorem</li>
+        <li>lorem</li>
+        <li>lorem</li>
+        <li>lorem</li>
+        <li>lorem</li>
+      </ul> */}
     </div>
   )
 }
