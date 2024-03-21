@@ -13,12 +13,13 @@ import SingleMoviePage from './components/singleMoviePage/SingleMoviePage';
 
 function App() {
 
-  const [idBook, setIdBook] = useState(5283168);
+  const [favorite, setFavorite] = useState([]);
 
   const value = {
-    idBook,
-    setIdBook
+  favorite,
+  setFavorite
   }
+  console.log(favorite)
   return (
     <BrowserRouter>
       <Context.Provider value={value}>
