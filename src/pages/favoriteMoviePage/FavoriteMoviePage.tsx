@@ -1,13 +1,20 @@
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+import Context from '../../context/Context'
 
 const FavoriteMoviePage = () => {
 
+  const value = useContext(Context);
+  const [favoriteItems, setFavoriteItems] = useState<any>([]);
+
+  useEffect(() => {
+    setFavoriteItems(value.favorite);
+
+  }, [value.favorite])
 
 
-  
   return (
     <div>
- 
+      {favoriteItems}
     </div>
   )
 }
