@@ -1,24 +1,24 @@
-import React, { useContext, useEffect, useState } from 'react'
-import Context from '../../context/Context'
+import React, { useEffect, useState } from 'react'
 import style from './style.module.css'
+import { useSelector } from 'react-redux';
 
 const FavoriteMoviePage = () => {
 
-  const value = useContext(Context);
-
+  const favoriteIconMovie = useSelector((state: any) => state.counter)
   const [favoriteItems, setFavoriteItems] = useState<any>([]);
 
   useEffect(() => {
 
-    console.log(value.favorite)
-    setFavoriteItems(value.favorite)
-    console.log(favoriteItems)
-  }, [favoriteItems])
+     setFavoriteItems(favoriteIconMovie.movie)
+    console.log(favoriteItems); 
+
+  }, [favoriteItems, favoriteIconMovie])
 
 
   return (
     <div className={style.flexFavorite} >
       {
+
         favoriteItems.map((item: any) => {
           return (
             <div key={item.kinopoiskId} className={style.favoriteList} >
@@ -27,7 +27,7 @@ const FavoriteMoviePage = () => {
                   <ul>
                     <li className={style.imageFavorite}><img src={item.posterUrlPreview} alt="" /></li>
                     <li>{item.nameRu}</li>
-                    <li>{item.countries[0].country}</li>
+                    {<li>{item.countries[0].country}</li>}
                     <li>{item.genres.map((genre: any) => {
                       console.log(genre)
                       return (
@@ -41,8 +41,7 @@ const FavoriteMoviePage = () => {
               </div>
             </div>
           )
-
-        })
+        }) 
       }
     </div>
   )

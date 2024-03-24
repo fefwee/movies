@@ -3,51 +3,60 @@ import style from './style.module.css';
 import { Link } from 'react-router-dom';
 import Context from '../../context/Context';
 import AuthPage from '../../pages/authPage/AuthPage';
+import { useDispatch, useSelector } from 'react-redux';
+import { addFavorite, addFavoriteMovie } from '../../store/features/counter/counterSlice';
 
 
 const CardMainPage = ({ movie }: any) => {
-
-
   const value = useContext(Context);
-
-  const newArrMovie = movie.slice(0, 6);
-  
-
   const [items, setItems] = useState<any>([]);
   const [itemsId, setItemsId] = useState<any>([]);
+  const dispatch = useDispatch();
+  const favoriteIconMovie = useSelector((state: any) => state.counter)
+/*   const value = useContext(Context); */
+  const newArrMovie = movie.slice(0, 6);
+
+
 
 
   const handleFavoriteId = (id: number) => {
 
     if (itemsId.includes(id)) {
       const updatedItems = itemsId.filter((item: any) => item !== id);
-      setItemsId(updatedItems);
+      /* setItemsId(updatedItems); */
+      dispatch(addFavorite(updatedItems))
     } else {
       const updatedItems: any = [...itemsId, id];
-      
-      setItemsId(updatedItems);
+      dispatch(addFavorite(updatedItems))
+      /*  setItemsId(updatedItems); */
 
     }
   }
-  const handleChangeFavorite = (itemsMovie: any) => {
 
+  const handleChangeFavorite = (itemsMovie: any) => {
+    value.setFavorite(itemsMovie);
     handleFavoriteId(itemsMovie.kinopoiskId);
 
     const index = items.findIndex((item: any) => item.kinopoiskId === itemsMovie.kinopoiskId);
-
     if (index !== -1) {
       const newArray = items.filter((item: any, idx: any) => idx !== index);
-      setItems(newArray);
+      setItems(newArray); 
+      dispatch(addFavoriteMovie(newArray))
     } else {
       const newArray = [...items, itemsMovie];
-      setItems(newArray);
-      value.setFavorite(newArray);
+       setItems(newArray); 
+      dispatch(addFavoriteMovie(newArray))
+     /*  value.setFavorite(newArray); */
     }
   }
 
+
   useEffect(() => {
-    console.log(items);
-  }, [items]);
+    setItemsId(favoriteIconMovie.value);
+  }, [items, favoriteIconMovie]);
+
+
+
 
   return (
     <div className={style.newContainer} >

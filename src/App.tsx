@@ -14,26 +14,22 @@ import SingleMoviePage from './components/singleMoviePage/SingleMoviePage';
 function App() {
 
   const [favorite, setFavorite] = useState([]);
-  const [favoriteId, setFavoriteId] = useState([]);
 
   const value = {
     favorite,
     setFavorite
   }
-  const valueId = {
-    favoriteId,
-    setFavoriteId
-  }
+
 
 
   useEffect(() => {
     console.log(favorite)
-  },[favorite])
+  }, [favorite])
 
 
   return (
     <BrowserRouter>
-      <Context.Provider value={{value,valueId}}>
+      <Context.Provider value={value}>
         <div className='container'>
           <header>
             <Header />
