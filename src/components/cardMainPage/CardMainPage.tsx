@@ -37,14 +37,14 @@ const CardMainPage = ({ movie }: any) => {
     value.setFavorite(itemsMovie);
     handleFavoriteId(itemsMovie.kinopoiskId);
 
-    const index = items.findIndex((item: any) => item.kinopoiskId === itemsMovie.kinopoiskId);
+    const index = value.favorite.findIndex((item: any) => item.kinopoiskId === itemsMovie.kinopoiskId);
     if (index !== -1) {
-      const newArray = items.filter((item: any, idx: any) => idx !== index);
-      setItems(newArray); 
+      const newArray = value.favorite.filter((item: any, idx: any) => idx !== index);
+      value.setFavorite(newArray);
       dispatch(addFavoriteMovie(newArray))
     } else {
-      const newArray = [...items, itemsMovie];
-       setItems(newArray); 
+      const newArray = [...value.favorite, itemsMovie];
+      value.setFavorite(newArray);
       dispatch(addFavoriteMovie(newArray))
      /*  value.setFavorite(newArray); */
     }
