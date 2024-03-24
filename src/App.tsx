@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './index.css'
 import Header from './pages/header/Header';
@@ -14,15 +14,26 @@ import SingleMoviePage from './components/singleMoviePage/SingleMoviePage';
 function App() {
 
   const [favorite, setFavorite] = useState([]);
+  const [favoriteId, setFavoriteId] = useState([]);
 
   const value = {
-  favorite,
-  setFavorite
+    favorite,
+    setFavorite
   }
-  console.log(favorite)
+  const valueId = {
+    favoriteId,
+    setFavoriteId
+  }
+
+
+  useEffect(() => {
+    console.log(favorite)
+  },[favorite])
+
+
   return (
     <BrowserRouter>
-      <Context.Provider value={value}>
+      <Context.Provider value={{value,valueId}}>
         <div className='container'>
           <header>
             <Header />

@@ -1,8 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Slider from '../slider/Slider';
 
 const FavoriteMovie = ({ detailMovie }: any) => {
 
+
+    const [movie, setMovie] = useState([]);
+    const [singleMovie, setSingleMovie] = useState([]);
+
+
+  /*   useEffect(() => {
+        const dbRef = ref(getDatabase());
+        get(child(dbRef,'id')).then((snapshot) => {
+            if (snapshot.exists()) {
+                console.log(snapshot.val());
+            } else {
+                console.log("No data available");
+            }
+        }).catch((error) => {
+            console.error(error);
+        });
+
+    }, []) */
     return (
         <div /* className={style.overfllowList} */>
             <div>

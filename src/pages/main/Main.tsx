@@ -34,7 +34,7 @@ const Main = () => {
         <div className={style.footer}>
           <Footer />
         </div>
-      </div>
+      </div>  
     </div>
   )
 }

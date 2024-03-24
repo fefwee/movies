@@ -1,0 +1,22 @@
+.container{
+    padding: 20px;
+}
+.formUser{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.formUser input{
+    border-radius:0px;
+    background-color:transparent;
+    border-bottom: 2px solid rgb(86, 96, 236);
+}
+.userField{
+    display: flex;
+    flex-direction: column;
+}
+.submitButton{
+    padding-top: 40px;
+}
+

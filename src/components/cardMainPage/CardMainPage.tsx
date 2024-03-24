@@ -2,33 +2,51 @@ import React, { FC, useEffect, useContext, useState } from 'react';
 import style from './style.module.css';
 import { Link } from 'react-router-dom';
 import Context from '../../context/Context';
+import AuthPage from '../../pages/authPage/AuthPage';
 
 
 const CardMainPage = ({ movie }: any) => {
 
-  const value  = useContext(Context);
+
+  const value = useContext(Context);
 
   const newArrMovie = movie.slice(0, 6);
-
+  
 
   const [items, setItems] = useState<any>([]);
+  const [itemsId, setItemsId] = useState<any>([]);
 
-  const handleChangeFavorite = (id: number) => {
 
-      if (items.includes(id)) {
-        // Если элемент уже есть в массиве, удаляем его
-        const updatedItems = items.filter((item:any) => item !== id);
-        setItems(updatedItems);
-      } else {
-        // Если элемент не найден в массиве, добавляем его
-        const updatedItems:any = [...items, id];
-        setItems(updatedItems);
-        value.setFavorite(items);
-      }
+  const handleFavoriteId = (id: number) => {
+
+    if (itemsId.includes(id)) {
+      const updatedItems = itemsId.filter((item: any) => item !== id);
+      setItemsId(updatedItems);
+    } else {
+      const updatedItems: any = [...itemsId, id];
+      
+      setItemsId(updatedItems);
+
+    }
   }
-   
+  const handleChangeFavorite = (itemsMovie: any) => {
+
+    handleFavoriteId(itemsMovie.kinopoiskId);
+
+    const index = items.findIndex((item: any) => item.kinopoiskId === itemsMovie.kinopoiskId);
+
+    if (index !== -1) {
+      const newArray = items.filter((item: any, idx: any) => idx !== index);
+      setItems(newArray);
+    } else {
+      const newArray = [...items, itemsMovie];
+      setItems(newArray);
+      value.setFavorite(newArray);
+    }
+  }
+
   useEffect(() => {
-    console.log(items)
+    console.log(items);
   }, [items]);
 
   return (
@@ -41,9 +59,9 @@ const CardMainPage = ({ movie }: any) => {
               <div className={style.card} key={item.kinopoiskId}>
                 <div
                   className={style.favoriteBlock}
-                  onClick={() => handleChangeFavorite(item.kinopoiskId)}
+                  onClick={() => handleChangeFavorite(item)}
                 >
-                  <div className={items.includes(item.kinopoiskId) ? style.active : style.noActive}></div>
+                  <div className={itemsId.includes(item.kinopoiskId) ? style.active : style.noActive}></div>
                 </div>
                 <Link to={`/${item.kinopoiskId}`} >
                   <div className={style.cardImage}
@@ -59,13 +77,12 @@ const CardMainPage = ({ movie }: any) => {
                   </div>
                 </Link>
               </div>
-
-
-
             )
           })
         }
       </div>
+      <AuthPage title='Регистрация' titleBtn='Зарегистрироваться' />
+      <AuthPage title='Авторизация' titleBtn='Войти' />
     </div>
 
   )
